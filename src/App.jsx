@@ -32,7 +32,7 @@ function App() {
 
        <ExpenseList expenses={expenses} deleteExpense={deleteExpense}/>
 
-       <CurrencyConverter />
+       <CurrencyConverter expenses={expenses}/>
 
        </div>
     </div>
