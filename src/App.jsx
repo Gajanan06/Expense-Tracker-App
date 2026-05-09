@@ -12,6 +12,12 @@ function App() {
     setExpenses([...expenses,newExpense]);
   };
 
+  const deleteExpense = (id) => {
+    const updatedExpenses = expenses.filter((expense) => expense.id !== id);
+
+    setExpenses(updatedExpenses);
+  }
+
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-6xl mx-auto">
@@ -24,7 +30,7 @@ function App() {
 
        <SummaryPanel />
 
-       <ExpenseList />
+       <ExpenseList expenses={expenses} deleteExpense={deleteExpense}/>
 
        <CurrencyConverter />
 
