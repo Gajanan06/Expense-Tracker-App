@@ -21,7 +21,6 @@ function ExpenseForm({addExpense}) {
             category,
         };
 
-        console.log(newExpense)
         addExpense(newExpense);
 
         setTitle("");
@@ -31,7 +30,7 @@ function ExpenseForm({addExpense}) {
 
     return (
         <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-5">Add new Expense</h3>
+            <h3 className="text-2xl text-center font-semibold mb-5">Add new Expense</h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -73,7 +72,7 @@ function ExpenseForm({addExpense}) {
 
                 <button
                     type="submit"
-                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg transition duration-300">
+                    className="w-full bg-green-600 hover:bg-green-700 active:scale-95 text-white py-3 rounded-lg transition duration-300 font-medium">
                     Add Expense</button> 
             </form>
         </div>

@@ -28,7 +28,6 @@ function CurrencyConverter({expenses}) {
         );
 
         const data = await response.json();
-        console.log(data);
 
         setRate(data.rates[currency]);
 
@@ -53,7 +52,7 @@ function CurrencyConverter({expenses}) {
     return (
         <div className="bg-white p-6 rounded-xl shadow-md">
 
-         <h2 className="text-2xl font-semibold mb-5">Currency Converter</h2>
+         <h2 className="text-2xl text-center font-semibold mb-5">Currency Converter</h2>
 
 
       <div className="mb-5">

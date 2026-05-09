@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import Header from "./components/Header";
 import CurrencyConverter from "./components/CurrencyConverter";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import SummaryPanel from "./components/SummayPanel";
+import Footer from "./components/Footer";
 
 function App() {
 
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState(() => {
+
+  const savedExpenses = localStorage.getItem("expenses");
+
+    return savedExpenses
+      ? JSON.parse(savedExpenses)
+      : [];
+
+  });
 
   const addExpense = (newExpense) => {
     setExpenses([...expenses,newExpense]);
@@ -18,24 +28,39 @@ function App() {
     setExpenses(updatedExpenses);
   }
 
+  useEffect(() => {
+
+    localStorage.setItem(
+      "expenses",
+      JSON.stringify(expenses)
+    );
+
+  }, [expenses]);
+
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-6xl mx-auto">
-         <h2 className="text-4xl font-bold text-center text-green-600 mb-8">Expense Tracker</h2>
-      </div>
+   <div className="min-h-screen flex flex-col bg-gray-100">
+    <Header />
+    
+    <main>
+      <div className="min-h-screen bg-gray-100 p-6">
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ExpenseForm addExpense={addExpense}/>
 
-       <ExpenseForm addExpense={addExpense}/>
+        <SummaryPanel expenses={expenses}/>
+ 
+        <ExpenseList expenses={expenses} deleteExpense={deleteExpense}/>
 
-       <SummaryPanel expenses={expenses}/>
+        <CurrencyConverter expenses={expenses}/>
 
-       <ExpenseList expenses={expenses} deleteExpense={deleteExpense}/>
-
-       <CurrencyConverter expenses={expenses}/>
+       
 
        </div>
-    </div>
+      </div>
+    </main>
+
+    <Footer />
+   </div>
   )
 }
 

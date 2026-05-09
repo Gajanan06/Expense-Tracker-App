@@ -1,10 +1,9 @@
 function ExpenseList({ expenses , deleteExpense})
  {
 
-    console.log(expenses);
     return (
-        <div className="bg-white p-6 rounded-xl shadow-md h-125 flex flex-col">
-            <h2 className="text-2xl font-semibold mb-5">Expense List</h2>
+        <div className="bg-white p-6 rounded-xl shadow-md h-100 flex flex-col">
+            <h2 className="text-2xl text-center font-semibold mb-5">Expense List</h2>
 
             {expenses.length === 0 ? (
                 <p className="text-gray-500 text-center">
