@@ -3,7 +3,7 @@ function ExpenseList({ expenses , deleteExpense})
 
     console.log(expenses);
     return (
-        <div className="bg-white p-6 rounded-xl shadow-md">
+        <div className="bg-white p-6 rounded-xl shadow-md h-125 flex flex-col">
             <h2 className="text-2xl font-semibold mb-5">Expense List</h2>
 
             {expenses.length === 0 ? (
@@ -11,7 +11,7 @@ function ExpenseList({ expenses , deleteExpense})
                     No expenses added yet
                 </p>
             ) : (
-                <div className="space-y-4">
+                <div className="space-y-4 overflow-y-auto flex-1 pr-2">
                     {expenses.map((expense) => (
                         <div 
                           key={expense.id}
@@ -25,7 +25,7 @@ function ExpenseList({ expenses , deleteExpense})
                         </div>
 
                         <div className="text-right">
-                            <p className="text-lg font-bold text-green-600">{expense.amount}
+                            <p className="text-lg font-bold text-green-600">₹ {expense.amount}
                             </p>
 
                             <button onClick={() => deleteExpense(expense.id)}

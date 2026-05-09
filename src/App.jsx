@@ -28,7 +28,7 @@ function App() {
 
        <ExpenseForm addExpense={addExpense}/>
 
-       <SummaryPanel />
+       <SummaryPanel expenses={expenses}/>
 
        <ExpenseList expenses={expenses} deleteExpense={deleteExpense}/>
 
