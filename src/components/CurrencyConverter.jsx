@@ -50,7 +50,7 @@ function CurrencyConverter({expenses}) {
         : 0;
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-md">
+        <div className="bg-mist-100 p-6 rounded-xl shadow-md">
 
          <h2 className="text-2xl text-center font-semibold mb-5">Currency Converter</h2>
 
@@ -75,7 +75,7 @@ function CurrencyConverter({expenses}) {
         <select
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}
-          className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-green-500">
+          className="w-full bg-white border border-gray-300 rounded-lg p-3 outline-none focus:border-green-500">
 
           <option value="USD">USD - US Dollar</option>
           <option value="EUR">EUR - Euro</option>

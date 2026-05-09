@@ -29,8 +29,8 @@ function ExpenseForm({addExpense}) {
     };
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-2xl text-center font-semibold mb-5">Add new Expense</h3>
+        <div className="bg-mist-100 p-8 rounded-xl shadow-md">
+            <h3 className="text-2xl text-center font-semibold mb-7">Add new Expense</h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -41,7 +41,7 @@ function ExpenseForm({addExpense}) {
                        placeholder="Enter Expense Name"
                        value={title}
                        onChange={(e) => setTitle(e.target.value)}
-                        className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-green-500"/>
+                        className="w-full border bg-white border-gray-300 rounded-lg p-3 outline-none focus:border-green-500"/>
                 </div>
 
                 <div>
@@ -52,7 +52,7 @@ function ExpenseForm({addExpense}) {
                        placeholder="Enter Amount"
                        value={amount}
                        onChange={(e) => setAmount(e.target.value)}
-                       className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-green-500"/>
+                       className="w-full border bg-white border-gray-300 rounded-lg p-3 outline-none focus:border-green-500"/>
                 </div>
 
                 <div>
@@ -60,7 +60,7 @@ function ExpenseForm({addExpense}) {
                     <select 
                        value={category}
                        onChange={(e) => setCategory(e.target.value)}
-                       className="w-full border border-gray-300 rounded-lg p-3 outline-none focus:border-green-500">
+                       className="w-full bg-white border border-gray-300 rounded-lg p-3 outline-none focus:border-green-500">
 
                        <option>Food</option>
                        <option>Travel</option>
@@ -72,7 +72,7 @@ function ExpenseForm({addExpense}) {
 
                 <button
                     type="submit"
-                    className="w-full bg-green-600 hover:bg-green-700 active:scale-95 text-white py-3 rounded-lg transition duration-300 font-medium">
+                    className="w-full mt-3 bg-green-600 hover:bg-green-700 active:scale-95 text-white py-3 rounded-lg transition duration-300 font-medium">
                     Add Expense</button> 
             </form>
         </div>

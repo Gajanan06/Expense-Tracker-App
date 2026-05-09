@@ -17,7 +17,7 @@ function SummaryPanel({expenses}) {
     }, {});
 
     return (
-       <div className="bg-white p-6 rounded-xl shadow-md h-125 flex flex-col">
+       <div className="bg-mist-100 p-6 rounded-xl shadow-md h-125 flex flex-col">
 
       <h2 className="text-2xl font-semibold mb-5 text-center">
         Summary

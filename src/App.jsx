@@ -38,18 +38,20 @@ function App() {
   }, [expenses]);
 
   return (
-   <div className="min-h-screen flex flex-col bg-gray-100">
+   <div className="min-h-screen flex flex-col bg-gray-300">
     <Header />
     
     <main>
-      <div className="min-h-screen bg-gray-100 p-6">
-       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="min-h-screen bg-gray-300 p-6 ">
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
 
         <ExpenseForm addExpense={addExpense}/>
 
+        <ExpenseList expenses={expenses} deleteExpense={deleteExpense}/>
+
         <SummaryPanel expenses={expenses}/>
  
-        <ExpenseList expenses={expenses} deleteExpense={deleteExpense}/>
+        
 
         <CurrencyConverter expenses={expenses}/>
 
