@@ -25,7 +25,7 @@ The app allows users to add, manage, categorize, and track expenses with real-ti
 
 ## Live Demo
 
-https://expense-tracker-app-sigma-five.vercel.app/
+https://expense-tracker-app-gajanan.vercel.app/
 
 ## GitHub Repository
 
